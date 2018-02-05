@@ -1,63 +1,50 @@
-.site
-	height: 20px
-	width: 100%
-	background: red
+body
+	height: 100vh
+	padding: ($site-padding / 3.5) ($site-padding / 3.5) 0
+	background: url(i/owl@2x.png)  bottom right no-repeat
+	background-size: 100%
+	@media #{$small}
+		padding: ($site-padding / 2) ($site-padding / 2) 0
+	@media #{$medium}
+		padding: ($site-padding / 1.25) ($site-padding / 1.25) 0
+	@media #{$large}
+		padding: ($site-padding / 1.25) $site-padding 0
+.logo
+	width: 200px
+	margin-bottom: ($site-padding / 2)
 
-// Example of a for loop to step through color percentage
-$prct-yellow: 90%
-@for $i from 1 through 9
-	.content:nth-child(#{$i})
-		background-color: mix($yellow, $white, $prct-yellow)
+.download_btn
+	display: inline-block
+	margin-right: 8px
+	@media #{$small}
+		margin-right: 16px
 
-	$prct-yellow: $prct-yellow - 10%
+h1
+	font: 800 24px/32px $site-font
+	@media #{$small}
+		font: 800 32px/40px $site-font
+	@media #{$medium}
+		font: 800 48px/56px $site-font
+	span
+		color: $moms_green
 
+.download_btns
+	margin-bottom: $site-padding
 
-// Exmample of animated hamburger
-.mobile-nav-toggle
-	display: flex
-	align-items: center
-	margin: 0 auto
-	width: 100%
-	height: 100%
-	padding: 0 16%
-	box-sizing: border-box
-	background: rgba(0,0,0,1)
-	&:hover
-		cursor: pointer
-		background: rgba(0,0,0,0)
+.social
+	a
+		width: 40px
+		height: 40px
+		margin-right: 8px
 
-	transition: all .3s ease-in-out
+		img
+			width: 40px
+			height: 40px
 
-	span,
-	span:before,
-	span:after
-		content: ""
-		display: block
-		height: 4px
-		width: 80px
-		margin: 0 auto
-		background: #fff
-		position: relative
+footer
+	p
+		color: $grey
+		font: 600 16px/24px $site-font
 
-		transition: all .3s ease-in-out
-
-	span:before
-		top: 24px
-
-	span:after
-		top: -28px
-
-	&:hover span
-		background: transparent
-
-	&:hover span:before,
-	&:hover span:after
-		transform-origin: center
-		transform: rotate(45deg)
-		top: -4px
-		background: #000
-
-	&:hover span:before
-		transform: rotate(-45deg)
-		top: 0
-
+	.social
+		margin-bottom: 48px
